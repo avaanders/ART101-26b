@@ -1,0 +1,13 @@
+p { color : black; font-size: large; margin-right: 150px; padding:15x;background-color:rgb(251, 210, 223); font-weight: bolder;}
+
+li { text-align: center;font-weight: bold; }
+html {font-family: "Playwrite IE";
+background-color: rgb(241, 175, 213) }
+span {background-color:rgb(255, 220, 229)}
+span_01 {background-color:rgb(255, 220, 229)}
+
+/*select all html tags that have a class highlight_01*/
+.highlight_01 {background-color: rgb(255, 196, 196);}
+
+.highlight_02 {background-color: lightcyan;}
+#trixie_small {width: 1000; height: 150px}
