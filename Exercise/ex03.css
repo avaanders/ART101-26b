@@ -1,0 +1,10 @@
+.test-div {background-color: darkolivegreen;
+padding: 20px;
+margin: 20px;
+color:rgb(2, 40, 17)
+}
+button {background-color: rgb(131, 164, 104);}
+.my-flex {display:flex;}
+html {background-color: rgb(22, 75, 93);
+font-family: 'Jokerman', sans-serif;
+}

@@ -1,0 +1,52 @@
+html {
+    background-image: url(hills2.png);
+    background-size:fill;
+    background-repeat: no-repeat;
+
+}
+
+p {
+    color: rgb(186, 203, 166);
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 20px;
+    padding: 1px;
+    background-color: rgb(66, 76, 76)
+}
+
+h2 {
+    color: rgb(186, 203, 166);
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 20px;
+    padding: 1px;
+    background-color: rgb(54, 65, 66)
+}
+
+.snufchat {
+    position: absolute;
+    top: 200px;
+    left: 200px;
+}
+
+.snufchat2 {
+    position: absolute;
+    top: 250px;
+    left: 300px;
+}
+
+.snufkin {
+
+    position: relative;
+    right: 300px;
+
+}
+
+
+.moomin {
+    position: relative;
+    bottom: 200px;
+}
+.moomchat{
+    position: relative;
+    bottom: 250px;
+    left: 100px;
+}
