@@ -17,7 +17,7 @@ let mainEntity = {
     type: "fun area",
     moods: ["relaxing with my ice cream", "eating my ice cream, yummy!", "finishing my ice cream now i'm playing my harmonica now."],
     isMoving: false,
-    favoriteElement: environmentElements[1],
+
 };
 let mainWeather = {
 name: "The Sky",
@@ -35,7 +35,7 @@ $("#question1").click(function () {
 
     let currentMood = mainEntity.moods[arrayPosition];
 
-    let message = "<p>I am" + currentMood + ".</p>";
+    let message = "<p>I am " + currentMood + ".</p>";
 
     $("#output").html(message);
 
@@ -74,7 +74,12 @@ let arrayPosition = count3 % mainWeather.patterns.length;
 
 let currentPattern = mainWeather.patterns[arrayPosition];
 
-let message= "<p>it's" + currentPattern + ".</p>";
+let message= "<p> It's " + currentPattern + ".</p>";
 
+$("#output").html(message);
+
+    console.log(count3);
+    console.log(arrayPosition);
+    console.log(currentElement);
 
 });
