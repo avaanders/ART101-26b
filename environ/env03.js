@@ -3,6 +3,7 @@ let environmentTitle = "Moominvalley";
 let count = 0;
 let count2 = 0;
 let count3 = 0;
+let countB = 0;
 
 let mainLocation = {
     name: "Moominvalley",
@@ -20,16 +21,16 @@ let mainEntity = {
 
 };
 let mainWeather = {
-name: "The Sky",
-type: "Ever Changing clouds",
-patterns: ["warm and sunny", "far too hot, my ice cream is melting", "partly cloudy", "going to rain."],
+    name: "The Sky",
+    type: "Ever Changing clouds",
+    patterns: ["warm and sunny", "far too hot, my ice cream is melting", "partly cloudy", "going to rain."],
 
 };
 
 $("#question1").click(function () {
 
     count = count + 1;
-   
+
 
     let arrayPosition = count % mainEntity.moods.length;
 
@@ -68,18 +69,54 @@ $("#question2").click(function () {
 
 $("#question3").click(function () {
 
-count3 = count3 + 1;
+    count3 = count3 + 1;
 
-let arrayPosition = count3 % mainWeather.patterns.length;
+    let arrayPosition = count3 % mainWeather.patterns.length;
 
-let currentPattern = mainWeather.patterns[arrayPosition];
+    let currentPattern = mainWeather.patterns[arrayPosition];
 
-let message= "<p> It's " + currentPattern + ".</p>";
+    let message = "<p> It's " + currentPattern + ".</p>";
 
-$("#output").html(message);
+    $("#output").html(message);
 
     console.log(count3);
     console.log(arrayPosition);
     console.log(currentElement);
 
 });
+
+function askWeather() {
+let userWeather = prompt("day, evening, or night?");
+
+if (!userWeather) return;
+
+userWeather = userWeather.trim().toLowerCase();
+
+const overlay = $('overlay');
+
+if (userWeather == "day") {
+    $("#cloudOutput").html("Sunny, as usual.");
+    overlay.css({
+        "background-color": "blue",
+        "opacity": "0.3"
+});
+}
+else if (userWeather == "evening") {
+    $("#cloudOutput").html("Good evening.");
+    overlay.css({
+        "background-color": "orange",
+        "opacity": "0.3"
+});
+}
+else if (userWeather == "night") {
+    $("#cloudOutput").html("Nighttime, the perfect time for dinner.");
+    overlay.css({
+        "background-color": "purple",
+        "opacity": "0.3"
+    });
+}
+}
+$("#weatherButton").click(function (){
+    countB = countB + 1;
+    askWeather("day");
+    });
