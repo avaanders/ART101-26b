@@ -86,37 +86,61 @@ $("#question3").click(function () {
 });
 
 function askWeather() {
-let userWeather = prompt("day, evening, or night?");
+    let userWeather = prompt("day, evening, or night?");
 
-if (!userWeather) return;
+    if (!userWeather) return;
 
-userWeather = userWeather.trim().toLowerCase();
+    userWeather = userWeather.trim().toLowerCase();
 
-const overlay = $('overlay');
+    const overlay = $("#overlay");
 
-if (userWeather == "day") {
-    $("#cloudOutput").html("Sunny, as usual.");
-    overlay.css({
-        "background-color": "blue",
-        "opacity": "0.3"
-});
+    if (userWeather == "day") {
+        $("#cloudOutput").html("Sunny, as usual.");
+        overlay.css({
+            "background-color": "lightBlue",
+            "opacity": "0.3"
+        });
+    }
+    else if (userWeather == "evening") {
+        $("#cloudOutput").html("Good evening.");
+        overlay.css({
+            "background-color": "orange",
+            "opacity": "0.3"
+        });
+    }
+    else if (userWeather == "night") {
+        $("#cloudOutput").html("Nighttime, the perfect time for dinner... And more ice cream.");
+        overlay.css({
+            "background-color": "black",
+            "opacity": "0.7"
+        });
+    }
+    else {
+        $("#cloudOutput").html("What time of day is that?");
+        overlay.css({
+            "background-color": "white",
+            "opacity": "0"
+        });
+    }
 }
-else if (userWeather == "evening") {
-    $("#cloudOutput").html("Good evening.");
-    overlay.css({
-        "background-color": "orange",
-        "opacity": "0.3"
-});
-}
-else if (userWeather == "night") {
-    $("#cloudOutput").html("Nighttime, the perfect time for dinner.");
-    overlay.css({
-        "background-color": "purple",
-        "opacity": "0.3"
+$("#weatherButton").click(function () {
+    askWeather();
+})
+    
+$("#moominCreature").hover(
+  function () {
+    $("#thought").stop(true, true).slideDown(300);
+    $("#moominCreatre")
+  },
+ function () {
+    $("#thought").stop(true, true).slideUp(300);
+
+ });
+
+    $("#moominCreature").click(function() {
+        $(this).toggleClass("transformed");
     });
-}
-}
-$("#weatherButton").click(function (){
-    countB = countB + 1;
-    askWeather("day");
+
+     $("#snufkin").click(function() {
+        $(this).toggleClass("transformed");
     });
