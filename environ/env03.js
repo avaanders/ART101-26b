@@ -126,21 +126,67 @@ function askWeather() {
 $("#weatherButton").click(function () {
     askWeather();
 })
-    
+let following = false; 
+
+
+function isColliding($div1, $div2) {
+    const d1Offset = $div1.offset();
+    const d1Left = d1Offset.left;
+    const d1Top = d1Offset.top;
+    const d1Right = d1Left + $div1.outerWidth();
+    const d1Bottom = d1Top + $div1.outerHeight();
+
+    const d2Offset = $div2.offset();
+    const d2Left = d2Offset.left;
+    const d2Top = d2Offset.top;
+    const d2Right = d2Left + $div2.outerWidth();
+    const d2Bottom = d2Top + $div2.outerHeight();
+
+    return !(d1Right < d2Left ||
+        d1Left > d2Right ||
+        d1Bottom < d2Top ||
+        d1Top > d2Bottom);
+}
+
 $("#moominCreature").hover(
-  function () {
-    $("#thought").stop(true, true).slideDown(300);
-    $("#moominCreatre")
-  },
- function () {
-    $("#thought").stop(true, true).slideUp(300);
+    function () {
+        $("#thought").stop(true, true).slideDown(300);
+    },
+    function () {
+        $("#thought").stop(true, true).slideUp(300);
+    }
+);
 
- });
+$(document).keydown(function (event) {
+    if (event.key === " " || event.code === "Space") {
+        event.preventDefault();
 
-    $("#moominCreature").click(function() {
-        $(this).toggleClass("transformed");
-    });
+        following = !following;
+        $("#moominCreature").toggleClass("following");
+    }
+});
 
-     $("#snufkin").click(function() {
-        $(this).toggleClass("transformed");
-    });
+$(document).mousemove(function (event) {
+    if (following === true) {
+        const $moominCreature = $("#moominCreature");
+        const $scene = $("#scene");
+        const $snufkin = $("#snufkin");
+
+        const newLeft = event.pageX - $scene.offset().left + 30;
+        const newTop = event.pageY - $scene.offset().top + 30;
+
+        $moominCreature.css({
+            left: newLeft,
+            top: newTop
+        });
+
+        if (isColliding($moominCreature, $snufkin)) {
+            $("#thought").text("Hi Snufkin, I brought us ice cream!").slideDown(300);
+            $("#status").text("Success!! Time to eat this yummy frozen dairy treat with my friend :)");
+        }else {
+            $("#thought").text("Where is Snufkin?")
+             $("#status").text("A little more to the left......")
+        }
+        
+    }
+});
