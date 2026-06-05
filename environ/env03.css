@@ -104,6 +104,21 @@ position: relative;
   pointer-events: none;
 }
 
+#thoughtSnufkin {
+  display: none;
+  position: absolute;
+  left: 95px;
+  top: -20px;
+  background: rgb(243, 255, 254);
+  border: 2px solid black;
+  border-radius: 20px;
+  padding: 12px;
+  width: 180px;
+  z-index: 3;
+  pointer-events: none;
+}
+
+
 #moominCreature {
 width: 100px;
 height: 100px;

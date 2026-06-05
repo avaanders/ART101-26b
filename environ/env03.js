@@ -12,7 +12,6 @@ let mainLocation = {
     isMoving: false,
 };
 
-///let environmentElements = ["Lovely, I love eating ice cream.", "Occasionally, I'm visiting for the summer.", "Yes, I leave when it gets cold. With the first signs of winter, I leave through the mountains to travel the world.", "My friend is Moomin! He lives in Moominvalley."];
 let mainEntity = {
     name: "The Neverending Green Meadow feat. Snufkin and Moomin",
     type: "fun area",
@@ -154,6 +153,14 @@ $("#moominCreature").hover(
     },
     function () {
         $("#thought").stop(true, true).slideUp(300);
+    }
+);
+$("#snufkin").hover(
+   function () {
+        $("#thoughtSnufkin").stop(true, true).slideDown(300);
+    },
+    function () {
+        $("#thoughtSnufkin").stop(true, true).slideUp(300);
     }
 );
 

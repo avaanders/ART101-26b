@@ -68,5 +68,9 @@ $("#crAdd").click( function(){
 
     // save to the memory 
     // reset the fporm prepare for the next iteration
+addCreatureToDOM(newCreature)
+
+allCreatures.push(newCreature);
+
 
 });
